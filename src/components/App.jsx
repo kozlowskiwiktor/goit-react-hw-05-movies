@@ -1,8 +1,5 @@
-import { BrowserRouter, Routes, Route, Link, NavLink } from 'react-router-dom';
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { SharedLayout } from './SharedLayout/SharedLayout';
-import { MovieList } from './MovieList/MovieList';
 import { Home } from 'pages/Home';
 import { Movies } from 'pages/Movies';
 import { MovieDetails } from './MovieDetails/MovieDetails';

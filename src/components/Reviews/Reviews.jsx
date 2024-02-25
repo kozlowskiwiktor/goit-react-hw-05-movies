@@ -7,7 +7,7 @@ export const Reviews = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    if (!reviews) return;
+    if (!movieId) return;
 
     getByReviews(movieId).then(data => {
       setReviews(data.results);
