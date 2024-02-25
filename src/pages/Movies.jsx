@@ -13,7 +13,7 @@ export const Movies = () => {
   const [searchedMovies, setSearchedMovies] = useState([]);
 
   const handleChange = e => {
-    setSearchParams(e.target.value);
+    setSearchQuery(e.target.value);
   };
   const handleSubmit = e => {
     e.preventDefault();
