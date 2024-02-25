@@ -15,9 +15,11 @@ export const Movies = () => {
   const handleChange = e => {
     setSearchQuery(e.target.value);
   };
+
   const handleSubmit = e => {
     e.preventDefault();
-    setSearchParams({ query: searchParams });
+
+    setSearchParams({ query: searchQuery });
 
     getByTitle(searchQuery).then(data => setSearchedMovies(data.results));
   };
@@ -27,7 +29,7 @@ export const Movies = () => {
         <Searchbar
           searchQuery={searchQuery}
           handleChange={handleChange}
-          onSubmit={handleSubmit}
+          handleSubmit={handleSubmit}
         />
         <div>{searchedMovies && <MovieList movies={searchedMovies} />}</div>
       </main>
