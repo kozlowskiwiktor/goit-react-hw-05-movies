@@ -10,7 +10,7 @@ export const Reviews = () => {
     if (!reviews) return;
 
     getByReviews(movieId).then(data => {
-      setReviews.apply(data.results);
+      setReviews(data.results);
     });
   }, [movieId]);
 
