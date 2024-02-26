@@ -1,6 +1,8 @@
+import css from './Searchbar.module.css';
+
 export const Searchbar = ({ searchQuery, handleChange, handleSubmit }) => {
   return (
-    <div>
+    <div className={css.searchbar}>
       <form onSubmit={handleSubmit}>
         <input
           type="text"

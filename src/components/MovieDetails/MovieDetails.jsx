@@ -2,6 +2,8 @@ import { getByID } from 'api';
 import { Suspense, useEffect, useState } from 'react';
 import { Link, Outlet, useParams } from 'react-router-dom';
 
+import css from './MoviesDetails.module.css';
+
 export const MovieDetails = () => {
   const { movieId } = useParams();
   const [details, setDetails] = useState(null);
@@ -20,18 +22,21 @@ export const MovieDetails = () => {
       <button onClick={() => window.history.back()}>Go back</button>
       <div>
         <ul>
-          <li>
-            {details.title} ({details.range_date})
+          <li className={css.list_item}>
+            Title: {details.title}{' '}
+            {details.range_date ? details.range_date : ''}
           </li>
-          <li>User score: {Math.round(details.vote_average * 10)}%</li>
-          <li>
+          <li className={css.list_item}>
+            User score: {Math.round(details.vote_average * 10)}%
+          </li>
+          <li className={css.list_item}>
             <p>Overview:</p>
             {''}
             <p>{details.overview}</p>
           </li>
-          <li>
+          <li className={css.list_item}>
             <div>
-              <li>
+              <li className={css.list_item}>
                 <ul>
                   <p>
                     Genres:
@@ -41,12 +46,16 @@ export const MovieDetails = () => {
                   </p>
                 </ul>
               </li>
-              <li>
+              <li className={css.list_item}>
                 <ul>
                   <p>Additional information:</p>
-                  <li>
-                    <Link to="cast">Cast</Link>
-                    <Link to="reviews">Reviews</Link>
+                  <li className={css.list_item}>
+                    <Link className={css.info} to="cast">
+                      Cast
+                    </Link>
+                    <Link className={css.info} to="reviews">
+                      Reviews
+                    </Link>
                   </li>
                 </ul>
               </li>
